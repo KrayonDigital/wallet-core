@@ -1,5 +1,10 @@
 FROM ubuntu:22.04
 
+RUN addgroup --system <group>
+RUN adduser --system <user> --ingroup <group>
+USER <user>:<group>
+
+
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install some basics
