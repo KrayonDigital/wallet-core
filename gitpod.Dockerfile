@@ -1,5 +1,10 @@
 FROM ubuntu:18.04
 
+RUN addgroup --system <group>
+RUN adduser --system <user> --ingroup <group>
+USER <user>:<group>
+
+
 # Install some basics
 RUN apt-get update \
     && apt-get install -y \
